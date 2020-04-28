@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=360px, initial-scale=1, maximum-scale=1">
+
+	<script src="images/jquery-2.2.4.min.js"></script>
+	<script src="images/device_id.js"></script>
+	<link href="images/style.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+
+<div id="login" style="display:none;">
+	<form method="get" action="$authaction" id="f">
+		<input type='hidden' name='tok' id="t" value="$tok">
+		<input type='hidden' name='redir' id="r" value='$redir'>
+		<input type="submit" id="btnLogin" value="Giriş Yap">
+	</form>
+</div>
+
+			
+	
+<div class="background-wrap">
+  <div class="background"></div>
+</div>
+
+<form id="accesspanel">
+  <h1 id="litheader">AECEND</h1>
+  <div class="inset">
+    <p>
+      <input type="text" name="username" id="email" placeholder="Email address">
+    </p>
+    <p>
+      <input type="password" name="password" id="password" placeholder="Access code">
+    </p>
+    <div style="text-align: center;">
+      <div class="checkboxouter">
+        <input type="checkbox" name="rememberme" id="remember" value="Remember">
+        <label class="checkbox"></label>
+      </div>
+      <label for="remember">Remember me for 14 days</label>
+    </div>
+    <input class="loginLoginValue" type="hidden" name="service" value="login" />
+  </div>
+  <p class="p-container">
+    <input type="button" name="Login" id="btnGo" value="Authorize">
+  </p>
+</form>
+
+
+</body>
+
+
+<script type="text/javascript">	
+	
+	function go() {
+		if (jQuery("#r").val()==='redir') {
+			jQuery("#r").val('https://www.google.com.tr');
+		}
+		
+		jQuery("#btnLogin").click();
+	}
+		
+
+    jQuery('#btnGo').click(function() {	
+			go();
+    });
+
+
+		
+	</script>
+
+</html>
