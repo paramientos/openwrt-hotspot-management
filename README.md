@@ -47,6 +47,56 @@ You can ***change*** the splash screen at`/etc/banner`
 
 **4-** Enjoy your new Wi-Fi friend :)
 
+
+|Parameters (alive.sh)|   |    |
+|---|---|---|
+| real_ip   | Real IP/Public IP   |   |
+| mac_address  |  Mac address of the device (wan port) |   |
+| hostname  | Hostname of the device  |   |
+| disk_usage_percentage  | Disk usage of the device  |   |
+| memory_usage_percentage | Memory usage of the device  |   |
+| uptime  |   |   |
+
+
+|Parameters (bw.sh)|   |    |
+|---|---|---|
+| download   | Download info of the device as Kb   |   |
+| upload  |  Upload info of the device as Kb |   |
+| until_to  | The date that data was received  |   |
+
+|Parameters (dhcp_leases.sh)|   |    |
+|---|---|---|
+| leases   | The Dhcp leases of the device   |   |
+
+|Parameters (law_5651.sh)|   |    |
+|---|---|---|
+| leases   | The Dhcp leases of the device   |   |
+
+|Parameters (ssid.sh)|   |    |
+|---|---|---|
+| ssid_name   | Wi-Fi name   |   |
+| ssid_key  |  Wi-Fi password |   |
+
+|Parameters (url_logger.sh)|   |    |
+|---|---|---|
+| gateway_ip   | The gateway ip of the device   |   |
+| urls  |  The url addresses that the users visited |   |
+
+|Parameters (user_bw_usage.sh)|   |    |
+|---|---|---|
+| usage   | The user data usage information. For more further information about the parameters of the Wrtbwmon package, you can check : https://github.com/Kiougar/luci-wrtbwmon |   |
+
+
+The packages : 
+- Curl (https://openwrt.org/packages/pkgdata/curl)
+- wrtbwmon_0.36_all (https://github.com/Kiougar/luci-wrtbwmon)
+- luci-wrtbwmon_v0.8.3_all (https://github.com/Kiougar/luci-wrtbwmon)
+- nodogsplash (https://nodogsplashdocs.readthedocs.io/en/stable)
+- bash (https://openwrt.org/packages/pkgdata/bash)
+- uuidgen (https://openwrt.org/packages/pkgdata_lede17_1/uuidgen)
+- qos-scripts (https://openwrt.org/docs/guide-user/network/traffic-shaping/traffic_shaping)
+- luci-app-qos (https://openwrt.org/packages/pkgdata/luci-app-qos)
+
 Supported versions :
  - [x] OpenWrt 19.07.1
  - [x] OpenWrt 19.07.0
