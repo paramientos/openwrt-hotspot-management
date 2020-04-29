@@ -11,6 +11,8 @@ With the OpenWrt Management Service, you can collect the data on the device and 
 - Dhcp log information (you can sign it there if you wish).
 - Signing DHCP log files will be in the next version
 
+(In Turkish => **OpenWrt**, modemimizin beceri ve yeteneklerini geliştirmek için mükemmel bir seçimdir. Bu yüzden bash tabanlı bir hizmet geliştirdim, **Wi-Fi Hotspot**, **indirme/yükleme limitleme**, **5651 log yönetimi** gibi tüm ihtiyaçlarınızı yönetmek için OpenWrt cihazınıza entegre edebilirsiniz)
+
 **Working logic :**
 All main files are located at /usr/montefi folder.
 Every endpoint has a variable named `endpoint_url`
