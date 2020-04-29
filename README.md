@@ -1,15 +1,15 @@
 ## OpenWrt Hostpot/Logging/Qos Management Bash Service
 
-With OpenWrt management bash service, you can direct the data you collect on the device to the relevant endpoints. With the data collection mechanism built into the device, you will be able to perform the following operations without any hassle:
+With the OpenWrt Management Service, you can collect the data on the device and send it to the endpoint that you specified.
 
 - Hotspot management
 - Speed limitation with Qos Control
-- Who entered which sites with URL logging
-- Download / Upload information (on both device and user basis) (Watching Bandwith)
+- Who visited which websites with URL logging
+- Download/Upload information (both device and user) (Watching Bandwidth)
 - Device uptime information (heartbeat)
 - SSID information
-- It takes the Dhcp log information and sends the relevant endpointe data (you can sign it there if you wish).
-- Signing with SSL will be activated in the next version.
+- Dhcp log information (you can sign it there if you wish).
+- Signing DHCP log files will be in the next version
 
 **Working logic :**
 All main files are located at /usr/montefi folder.
@@ -22,29 +22,26 @@ If you can check /usr/montefi/alive.sh, you will see the line as this :
 The variable `API_BASE_URI` comes from `/usr/montefi/config.sh`
 `device/$DEVICE_ID/status` is the endpoint part of it. You can change it if you want.
 
-When OpenWrt/Lede devices run on Linux, it creates many related package logs. You can provide these logs with third party tools.
-Since the packages used in this project produce logs in the same way, we break down, make sense of these log files and direct them to the specified endpoint. For this, cronjob service is used.
-
-While device setup, a device id information is compiled. This is sent in the body when sending data to endpoints in the future.
+Since OpenWrt/Lede devices run on Linux, it creates many related package logs. You can provide these logs with third party tools.
+Since the packages used in this project produce logs in the same way, the service parses them and make sense of these log files and send them to the endpoint that you mentioned. Cronjob service is used to do that.
 
 You can ***change*** the `**API_BASE_URI**` information at`/ur/montefi/config.sh`
 You can ***change*** the splash screen at`/etc/banner`
 
 ## Installation
 
-**1-** First, we copy all the files to the OpenWrt device and copy them to root.
+**1-** First of all, change your `API_BASE_URI` value at`/ur/montefi/config.sh` then copy all the files to the OpenWrt device's root directory (/)
 
 `$ scp -r / local / setup-files root@10.10.0.2: /`
+
 (In Windows / Linux / Mac you can use Ftp client also)
 
-**2-** We connect to the device with Ssh
+**2-** Connect to the device via ssh
 
     $ ssh root@10.10.0.2
     $ sh /tmp/montefi/setup.sh
-	
-	Then follow the instructions
 
-**3-** When setup is finished, check your crons. You will see the tasks that OpenWrt is going to handle
+**3-** When the installation is finished, check your cron items. You will see the tasks that OpenWrt is going to handle
 
     $ crontab -e
 
