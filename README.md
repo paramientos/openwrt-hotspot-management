@@ -112,4 +112,4 @@ Supported versions :
  - [x] LEDE 17.01.2
 
 **RoadMap :** 
- - [ ] Sign dhcp log files with SSL at device
+ - [x] Sign dhcp log files with SSL at device
